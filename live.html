@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مشاهدة المباراة مباشر</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .video-container {
+      text-align: center;
+      margin: 30px auto;
+    }
+
+    iframe {
+      width: 90%;
+      height: 400px;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-btn a {
+      background-color: #1e3d59;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-btn a:hover {
+      background-color: #145;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📺 البث المباشر</h1>
+    <p>الزوراء 🆚 القوة الجوية</p>
+  </header>
+
+  <div class="video-container">
+    <!-- مثال على iframe وهمي من YouTube -->
+     <video id="video" controls width="100%" style="max-width: 800px; border-radius: 10px;"></video>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+  const video = document.getElementById('video');
+  const videoSrc = '  https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-iraq/e38c44b1b43474e1c39cb5b90203691e/index.m3u8' ; 
+
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, function () {
+      video.play();
+    });
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+    video.addEventListener('loadedmetadata', function () {
+      video.play();
+    });
+  } else {
+    alert("متصفحك لا يدعم تشغيل البث المباشر");
+  }
+</script>
+
+  </div>
+
+  <div class="back-btn">
+    <a href="index.html">⬅️ الرجوع إلى المباريات</a>
+  </div>
+
+  <footer>
+    <p>© 2025 - موقع مباريات اليوم | تصميم: حسنين جواد كاظم</p>
+  </footer>
+
+</body>
+</html>

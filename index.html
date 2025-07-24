@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>موقع مباريات اليوم</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tahoma', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .matches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .match {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .match:hover {
+      transform: translateY(-5px);
+    }
+
+    .match h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: #1e3a8a;
+    }
+
+    .match p {
+      margin: 5px 0 15px;
+    }
+
+    .match a button {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .match a button:hover {
+      background-color: #3b5bdc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #1e3a8a;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>⚽ موقع مباريات اليوم</h1>
+    <p>شاهد مبارياتك المفضلة مباشرة</p>
+  </header>
+
+  <section class="matches">
+    <div class="match">
+      <h2>الزوراء 🆚 القوة الجوية</h2>
+      <p>الساعة 8:00 مساءً</p>
+      <a href="live.html?stream=https://example.com/zawraa.m3u8&title=الزوراء vs القوة الجوية">
+        <button>▶️ مشاهدة المباراة</button>
+      </a>
+    </div>
+
+    <div class="match">
+      <h2>ريال مدريد 🆚 برشلونة</h2>
+      <p>الساعة 10:00 مساءً</p>
+      <a href="live.html?stream=https://example.com/elclasico.m3u8&title=ريال مدريد vs برشلونة">
+        <button>▶️ مشاهدة المباراة</button>
+      </a>
+    </div>
+
+    <div class="match">
+      <h2>ليفربول 🆚 مانشستر سيتي</h2>
+      <p>الساعة 11:30 مساءً</p>
+   
+        <button>▶️ مشاهدة المباراة</button>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 موقع مباريات اليوم - جميع الحقوق محفوظة
+  </footer>
+</body>
+
+</html>
